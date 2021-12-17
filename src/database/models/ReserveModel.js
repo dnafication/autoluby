@@ -31,8 +31,13 @@ module.exports = (sequelize, DataTypes) => {
           createdAt: DataTypes.DATE,
           updatedAt: DataTypes.DATE
          })
-         ReserveModel.associate = models => {
-        // teste
+        ReserveModel.associate = models => {
+          ReserveModel.belongsTo(models.VeicleModel, {
+            foreingKey: 'veicleID'
+        })
+          ReserveModel.belongsTo(models.UserModel, {
+            foreingKey: 'userID'
+        })
     }
     return ReserveModel
 }

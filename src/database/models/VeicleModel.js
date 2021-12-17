@@ -34,7 +34,12 @@ module.exports = (sequelize, DataTypes) => {
         createdAt: DataTypes.DATE
     })
     VeicleModel.associate = models => {
-        // teste
+        VeicleModel.hasMany(models.SaleModel, {
+            foreingKey: 'veicleID'
+        })
+        VeicleModel.hasMany(models.ReserveModel, {
+            foreingKey: 'veicleID'
+        })
     }
     return VeicleModel
 }

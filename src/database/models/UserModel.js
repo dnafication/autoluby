@@ -32,7 +32,12 @@ module.exports = (sequelize, DataTypes) => {
           updatedAt: DataTypes.DATE
     })
     UserModel.associate = models => {
-        // teste
+      UserModel.hasMany(models.SaleModel, {
+        foreingKey: 'userID'
+    })
+      UserModel.hasMany(models.ReserveModel, {
+        foreingKey: 'userID'
+    })
     }
     return UserModel
 }
