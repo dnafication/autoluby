@@ -4,13 +4,13 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('reserves', { 
       id: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
       },
       veicleID: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'veicles',
@@ -18,7 +18,7 @@ module.exports = {
         }
       },
       userID: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'users',
@@ -26,7 +26,7 @@ module.exports = {
         }
       },
       priceSold: {
-        type: DataTypes.DECIMAL,
+        type: Sequelize.DECIMAL,
         allowNull: false
       },
       createdAt: Sequelize.DATE,

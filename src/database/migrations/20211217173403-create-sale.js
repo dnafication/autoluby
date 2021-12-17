@@ -4,13 +4,13 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('sales', { 
       id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true
           },
           veicleID: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             references: {
               model: 'veicles',
@@ -18,7 +18,7 @@ module.exports = {
             }
           },
           userID: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             references: {
               model: 'users',
@@ -26,7 +26,7 @@ module.exports = {
             }
           },
           veicleStatus: {
-            type: DataTypes.STRING(20),
+            type: Sequelize.STRING(20),
             allowNull: false,
             references: {
               model: 'veicles',
@@ -34,7 +34,7 @@ module.exports = {
             }
           },
           priceSold: {
-            type: DataTypes.DECIMAL,
+            type: Sequelize.DECIMAL,
             allowNull: false
           },
           createdAt: Sequelize.DATE,
