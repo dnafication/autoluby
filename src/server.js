@@ -1,7 +1,7 @@
-import express from 'express'
-import dotenv from 'dotenv'
-import { router } from './routes/routes'
-import { db } from './database/database'
+const express = require('express')
+const dotenv = require('dotenv')
+const router = require('./routes/routes')
+const db = require('./database/database')
 
 const app = express()
 
