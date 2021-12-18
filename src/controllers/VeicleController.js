@@ -1,8 +1,8 @@
 const Veicle = require('../models/Veicle')
 
 module.exports = {
-    async createUser(req, res) {
-        const { brand, model, yearFabrication, rotateKm, color, chassi, price } = req.body
+    async createVeicle(req, res) {
+        const { brand, model, yearFabrication, rotateKm, color, chassi, price, status } = req.body
 
         const user = await Veicle.create({
             brand,
@@ -11,9 +11,10 @@ module.exports = {
             rotateKm,
             color,
             chassi,
-            price
+            price,
+            status
         })
 
-        return res.statu(201).json(user)
+        return res.status(201).json(user)
     }
 }

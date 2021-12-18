@@ -30,6 +30,10 @@ class Veicle extends Model {
               price: {
                 type: DataTypes.DECIMAL,
                 allowNull: false
+              },
+              status: {
+                type: DataTypes.STRING(20),
+                allowNull: false
               }
         }, { sequelize })
     }

@@ -13,4 +13,7 @@ router.get('/users/:userID', UserController.findOneUser)
 router.put('/users/:userID', UserController.updateUser)
 router.delete('/users/:userID', UserController.destroyUser)
 
+/* VEICLE ROUTES */
+router.post('/veicles', VeicleController.createVeicle)
+
 module.exports = router
