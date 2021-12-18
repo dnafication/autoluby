@@ -29,14 +29,8 @@ module.exports = {
       },
       avatar: Sequelize.STRING,
       biography: Sequelize.STRING,
-      createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false
-      },
-      updateddAt: {
-        type: Sequelize.DATE,
-        allowNull: false
-      }
+      createdAt: Sequelize.DATE,
+      updatedAt: Sequelize.DATE,
     });
   },
 
