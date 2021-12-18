@@ -15,5 +15,13 @@ router.delete('/users/:userID', UserController.destroyUser)
 
 /* VEICLE ROUTES */
 router.post('/veicles', VeicleController.createVeicle)
+router.get('/veicles', VeicleController.getAllVeicles)
+router.get('/veiclesAvailable', VeicleController.getAvailableVeicles)
+router.get('/veiclesSold', VeicleController.getNotAvailableVeicles)
+router.get('/veicles/:veicleID', VeicleController.getOneVeicle)
+router.delete('/veicles/:veicleID', VeicleController.destroyVeicle)
+
+/* SALE ROUTES */
+
 
 module.exports = router
